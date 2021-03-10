@@ -15,8 +15,3 @@ def product_view(request):
         "Product": objects
     }
     return render(request,'product.html',context)
-
-def delete_product(request, id):
-    product = Product.objects.get(id=id)
-    product.delete()
-    return HttpResponseRedirect("/product")
