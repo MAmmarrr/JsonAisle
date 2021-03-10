@@ -1,0 +1,21 @@
+<html>
+
+<body>
+<h1>ADD PRODUCT</h1>
+<form method="POST">{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Add">
+</form>
+
+<ol>
+<p>List of Products Name</p>
+{% for order in Product %}
+<form method="POST" action="delete/{{order.id}}/">{% csrf_token %}
+<li>
+    {{ order.name }}<input type="submit" value="Delete">
+</li>
+</form>
+{% endfor %}
+</lo>
+</body>
+</html>
